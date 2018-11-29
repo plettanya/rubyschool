@@ -1,6 +1,5 @@
 # encoding: cp866
-
-print "Enter your age: "
+print "How old are you?"
 a = gets.to_i
 
 print "Do you want play game? (Y/N)"
@@ -12,85 +11,97 @@ end
 
 if a >= 18 && g == "Y"
 puts "Let's go play"
+
 money = 100
 bankomat = 1000
 
 100.times do
 puts "Press Enter to continue"
 gets
+w = 0.3
+while w == 0.3
+print "." + "\r"
+sleep w
+print ".." + "\r"
+sleep w
+print "..." + "\r"
+sleep w
+puts
+
 x = rand(0..9)
 y = rand(0..9)
 z = rand(0..9)
 
-if x == 0 && y == 0 && z == 0
-puts "You are bankrupt"
-money = 0
-end
-
-if x == 1 && y == 1 && z == 1
-puts "You gets 10 dollars"
-money = money + 10
-bankomat = bankomat - 10
-end
-
-if x == 2 && y == 2 && z == 2
-puts "You gets 20 dollars"
-money = money + 20
-bankomat = bankomat - 20
-end
-
-if x == 3 && y == 3 && z == 3
-puts "You gets 30 dollars"
-money = money + 30
-bankomat = bankomat - 30
-end
-
-if x == 4 && y == 4 && z == 4
-puts "You gets 40 dollars"
-money = money + 40
-bankomat = bankomat - 40
-end
-
-if x == 5 && y == 5 && z == 5
-puts "You gets 50 dollars"
-money = money + 50
-bankomat = bankomat - 50
-end
-
-# 666 unlucky number for all
-if x == 6 && y == 6 && z == 6
-puts "You are loozer"
-bankomat = bankomat/2
-money = money/2
-end
-
-if x == 7 && y == 7 && z == 7
-puts "You gets 70 dollars"
-money = money + 70
-bankomat = bankomat - 70
-end
-
-if x == 8 && y == 8 && z == 8
-puts "You gets 80 dollars"
-money = money + 80
-bankomat = bankomat - 80
-end
-
-if x == 9 && y == 9 && z == 9
-
-puts "You gets 90 dollars"
-money = money + 90
-bankomat = bankomat - 90
-end
-
-if x == 1 && y == 2 && z == 3
-puts "You gets 123 dollars"
-money = money + 123
-bankomat = bankomat - 123
+if money <= 0
+puts "Game over"
+exit
 end
 
 puts "Your combination #{x}#{y}#{z}"
+
+if x == 0 && y == 0 && z == 0
+puts "You are bankrupt"
+money = 0
+exit
+
+elsif x == 1 && y == 1 && z == 1
+puts "You gets 10 dollars"
+money = money + 10
+bankomat = bankomat - 10
+
+elsif x == 2 && y == 2 && z == 2
+puts "You gets 20 dollars"
+money = money + 20
+bankomat = bankomat - 20
+
+elsif x == 3 && y == 3 && z == 3
+puts "You gets 30 dollars"
+money = money + 30
+bankomat = bankomat - 30
+
+elsif x == 4 && y == 4 && z == 4
+puts "You gets 40 dollars"
+money = money + 40
+bankomat = bankomat - 40
+
+elsif x == 5 && y == 5 && z == 5
+puts "You gets 50 dollars"
+money = money + 50
+bankomat = bankomat - 50
+
+elsif x == 6 && y == 6 && z == 6
+puts "You are loozer"
+bankomat = bankomat/2
+money = money/2
+
+elsif x == 7 && y == 7 && z == 7
+puts "You gets 70 dollars"
+money = money + 700
+bankomat = bankomat - 700
+
+elsif x == 8 && y == 8 && z == 8
+puts "You gets 80 dollars"
+money = money + 80
+bankomat = bankomat - 80
+
+elsif x == 9 && y == 9 && z == 9
+puts "You gets 90 dollars"
+money = money + 90
+bankomat = bankomat - 90
+
+elsif x == 1 && y == 2 && z == 3
+puts "You gets 123 dollars"
+money = money + 123
+bankomat = bankomat - 123
+
+else
+puts "You lost 1 dollar"
+money = money - 1
+bankomat = bankomat + 1
+end
+
 puts "Your money: #{money}"
 puts "Bank money: #{bankomat}"
+end
 end
 end
