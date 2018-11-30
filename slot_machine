@@ -17,17 +17,18 @@ bankomat = 1000
 
 100.times do
 puts "Press Enter to continue"
-gets
 w = 0.3
-while w == 0.3
+while true
 print "." + "\r"
 sleep w
 print ".." + "\r"
 sleep w
 print "..." + "\r"
 sleep w
-puts
+break
+end 
 
+gets
 x = rand(0..9)
 y = rand(0..9)
 z = rand(0..9)
@@ -102,6 +103,5 @@ end
 
 puts "Your money: #{money}"
 puts "Bank money: #{bankomat}"
-end
 end
 end
